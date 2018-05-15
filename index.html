@@ -1,27 +1,85 @@
-<!DOCTYPE <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Bio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-</head>
-<body>
-    <h1>Seth Drewry</h1>
-    <img alt = "my_boys" src = 'Riley_Declan_Owen.jpg' width="300" height="200">
-    <br>
-    <h1>About Me</h1>
-    <p>I lead product management and commercial operations for Aerospace, Defense & Security at IHS Markit.  I have been with IHS Markit for 15 years.</p>
-    <p>I have a Masters in Security Studies from Georgetown and a BA in History and Psychology from the University of Virginia.  I am working on a certificate in Data Analytics from George Washington University</p>
-    <p>I am married to Aimee Drewry and have three boys: Riley (9), Declan (6), and Owen (3).</p>
-    <h2>Contact Information</h2>
-    <UL>
-        <li>Work Email: <a>seth.drewry@ihsmarkit.com</a></li>
-        <li>Personal Email: <a>seth.drewry@gmail.com</a></li>
-        <li>Phone: +1-571-201-4923</li>
-        <li>Linkedin: <a>https://www.linkedin.com/in/seth-drewry/</a></li>
-    </UL>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    
+    <title>Weather Analysis</title>
+  </head>
+
+  <body>
+    <div class = "container-fluid"></div>
+      <nav class="navbar navbar-expand-sm navbar-dark bg-primary" role="navigation">
+        <div class = "navbar">
+          <a class="navbar-brand" href="index.html">Weather Analysis Home</a>
+        </div>
+        <div class = "dropdown navbar-collapse navbar-right">
+          <button class = "dropdown-toggle navbar-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Visualizations
+          </button>
+          <div class = "dropdown-menu">
+            <ul>
+              <li><a href="clouds_vs_lat.html">Cloud Cover</a></li>
+              <li><a href="humidity_vs_lat.html">Humidity</a></li>
+              <li><a href="temp_vs_lat.html">Temperature</a></li>
+              <li><a href="wind_vs_lat.html">Wind Speed</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class = "navbar">
+          <ul class="navbar-nav">
+              <li class="nav-item"><a class="navbar-brand" href="comparisons.html">Comparisons</a></li>
+              <li class="nav-item"><a class="navbar-brand" href="data.html">Data</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class = "row">
+      <div class = "container-fluid col-sm-8">
+          <br>
+          <h2>Weather Analysis with OpenWeatherMap API and Python</h2>
+          <figure class = "figure">
+              <img class = "figure img img-fluid rounded" src = "temp_vs_lat.png" width=600>
+              <figcaption class = "figure-caption text-right">Temperature vs. Latitude</figcaption>
+          </figure>
+          <h3>Project Overview</h3>
+          <p>This was a useful project showcasing Python's capabilities to access data via API calls, cleansing and analysis with Pandas, and visualization with Pandas native visualization capabilities and Matplotlib.</p>
+          <p>The weather data was collecting using the <a href = "https://openweathermap.org/api">OpenWeatherMap API</a> to collect weather data on 500 randomly chosen cities around the world on May 15, 2018 at 1:30am EDT.  The Pandas Python library was used to connect to the OpenWeatherMap API and cleanse the data.  Pandas native visualization and Python's Matplotlib visualization library were used to create scatter plots graphing the parameters by latitude for each city.</p>
+          <p>This random sample (and others ran contemporaneously) have a greater density of cities in latitudes above the equator than below. One should take this into account for future analyses. For example, it appears from these graphs that humidity and cloud cover increase as latitude increases, but this doesn't seem to make logical sense on its face. Further, this analysis did not control for many factors - including current season (depending on longitude) and time of data collected.</p>
+      </div>
+      <div class = "container-fluid col-sm-2">
+        <figure class = "figure">
+            <a href = "temp_vs_lat.html">
+              <img class="img-responsive figure img img-fluid rounded" src = "temp_vs_lat.png" width=200>
+            </a>
+        </figure>
+        <figure class = "figure">
+            <a href = "clouds_vs_lat.html">
+              <img class="img-responsive figure img img-fluid rounded" src = "clouds_vs_lat.png" width=200>
+            </a>
+        </figure>
+        <figure class = "figure">
+            <a href = "humidity_vs_lat.html">
+              <img class="img-responsive figure img img-fluid rounded" src = "humidity_vs_lat.png" width=200>
+            </a>
+        </figure>
+        <figure class = "figure">
+            <a href = "wind_vs_lat.html">
+              <img class="img-responsive figure img img-fluid rounded" src = "wind_vs_lat.png" width=200>
+            </a>
+        </figure>
+      </div>
+    </div>
+   
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  </body>
+
 </html>
